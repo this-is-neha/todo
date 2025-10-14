@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-
+import HeaderComponent from "../../Home/header";
 const ListEdit = () => {
   const [list, setList] = useState<any>({});
   const [success, setSuccess] = useState(false);
@@ -51,6 +51,9 @@ const ListEdit = () => {
   };
 
   return (
+<>
+<HeaderComponent/>
+
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-purple-300 via-pink-200 to-indigo-200">
   
       <div className="absolute top-[-100px] left-[-100px] w-[300px] h-[300px] bg-purple-400 rounded-full opacity-30 animate-pulse"></div>
@@ -116,7 +119,7 @@ const ListEdit = () => {
           )}
         </AnimatePresence>
       </motion.div>
-    </div>
+    </div></>
   );
 };
 

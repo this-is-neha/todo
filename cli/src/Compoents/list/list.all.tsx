@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import HeaderComponent from "../../Home/header";
 
 const ListList: React.FC = () => {
   const [lists, setLists] = useState<any[]>([]);
@@ -42,6 +43,8 @@ const ListList: React.FC = () => {
   };
 
   return (
+   <>
+   <HeaderComponent/>
     <div className="min-h-screen bg-gradient-to-br from-blue-100 via-indigo-100 to-purple-200 flex items-center justify-center p-6">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -114,7 +117,7 @@ const ListList: React.FC = () => {
           </table>
         </div>
       </motion.div>
-    </div>
+    </div></>
   );
 };
 

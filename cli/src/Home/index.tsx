@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-
+import HeaderComponent from "./header";
 const LandingPage = () => {
   const navigate = useNavigate();
 
   return (
+ <>
+
     <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex flex-col text-white">
      
       <section className="flex flex-col items-center justify-center flex-grow text-center px-6 py-20">
@@ -48,7 +50,7 @@ const LandingPage = () => {
         </motion.div>
       </section>
 
-      {/* Features Section */}
+
       <section className="bg-white text-gray-800 py-16 rounded-t-[3rem] shadow-2xl">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
           <motion.div
@@ -96,7 +98,7 @@ const LandingPage = () => {
           {new Date().getFullYear()}
         </p>
       </footer>
-    </div>
+    </div></>
   );
 };
 
