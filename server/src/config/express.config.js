@@ -11,7 +11,7 @@ const mainRoute = require("./routing.config");
 const app = express();
 
 app.use(cors({
-    origin:  '*'  ,
+    origin:  'https://goalggridd.netlify.app/'  ,
    
     allowedHeaders: 'Content-Type, Authorization', 
 }));
