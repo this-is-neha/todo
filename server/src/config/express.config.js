@@ -1,9 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const Joi = require("joi");
+
 const helmet = require("helmet");
-const mongoose = require("mongoose");
-const path = require('path'); 
+
 
 require("./db.config");
 const mainRoute = require("./routing.config");
@@ -11,9 +10,9 @@ const mainRoute = require("./routing.config");
 const app = express();
 app.use(cors({
   origin: "https://goalggridd.netlify.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 
 app.use(helmet());
 app.use(express.json());
