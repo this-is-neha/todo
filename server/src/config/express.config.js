@@ -11,11 +11,10 @@ const app = express();
 
 app.use(cors({
   origin: "https://goalggridd.netlify.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // OPTIONS included
   credentials: true
 }));
 
-app.options('*', cors())
+
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
