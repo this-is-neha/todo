@@ -9,11 +9,10 @@ require("./db.config");
 const mainRoute = require("./routing.config");
 
 const app = express();
-
 app.use(cors({
-    origin:  'https://goalggridd.netlify.app/'  ,
-   
-    allowedHeaders: 'Content-Type, Authorization', 
+  origin: "https://goalggridd.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
 }));
 
 app.use(helmet());
