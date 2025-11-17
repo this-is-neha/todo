@@ -22,9 +22,14 @@ class ListService {
             const listObj = new listModel(data)
             return await listObj.save()
         }
-        catch (exception) {
-            throw exception
-        }
+     catch (exception) {
+        console.error("Error creating list:", exception);
+        res.status(500).json({
+            result: null,
+            message: "Failed to create list",
+            error: exception.message
+        });
+    }
     }
     listAll = async () => {
         try {
@@ -44,9 +49,14 @@ class ListService {
             return listObj
         }
 
-        catch (exception) {
-            throw exception
-        }
+     catch (exception) {
+        console.error("Error creating list:", exception);
+        res.status(500).json({
+            result: null,
+            message: "Failed to create list",
+            error: exception.message
+        });
+    }
     }
 
     listOne = async (filter) => {
@@ -55,9 +65,14 @@ class ListService {
             const listObj = await listModel.findOne(filter)
             return listObj
         }
-        catch (exception) {
-            throw exception
-        }
+     catch (exception) {
+        console.error("Error creating list:", exception);
+        res.status(500).json({
+            result: null,
+            message: "Failed to create list",
+            error: exception.message
+        });
+    }
     }
     update = async (id, data) => {
         try {
@@ -65,9 +80,14 @@ class ListService {
             const listObj = await listModel.findByIdAndUpdate(id, data, { new: true })
             return listObj
         }
-        catch (exception) {
-            throw exception
-        }
+     catch (exception) {
+        console.error("Error creating list:", exception);
+        res.status(500).json({
+            result: null,
+            message: "Failed to create list",
+            error: exception.message
+        });
+    }
     }
     delete= async(id)=>{
         try{
