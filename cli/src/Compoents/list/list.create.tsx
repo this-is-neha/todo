@@ -3,6 +3,7 @@ import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import HeaderComponent from "../../Home/header";
+const baseURL =  "https://todo-o8z5.onrender.com";
 const ListCreate = () => {
   const [formData, setFormData] = useState({ title: "", description: "" });
   const [error, setError] = useState("");
@@ -16,7 +17,7 @@ const ListCreate = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/list/create", formData);
+    const response = await axios.post(`${baseURL}/list/create`, formData)
       console.log("List created:", response.data);
       setSuccess(true);
       setFormData({ title: "", description: "" });

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import HeaderComponent from "../../Home/header";
-
+const baseURL =  "https://todo-o8z5.onrender.com";
 const ListList: React.FC = () => {
   const [lists, setLists] = useState<any[]>([]);
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ const ListList: React.FC = () => {
   useEffect(() => {
     const fetchLists = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/list/all");
+        const response = await axios.get(`${baseURL}/list/all`);
         console.log("Lists response:", response.data);
 
         const data = Array.isArray(response.data)

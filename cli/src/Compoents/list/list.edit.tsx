@@ -4,6 +4,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import HeaderComponent from "../../Home/header";
+const baseURL =  "https://todo-o8z5.onrender.com";
 const ListEdit = () => {
   const [list, setList] = useState<any>({});
   const [success, setSuccess] = useState(false);
@@ -13,7 +14,7 @@ const ListEdit = () => {
   useEffect(() => {
     const fetchList = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/list/${id}`);
+        const response = await axios.get(`${baseURL}/list/${id}`);
         const data = response.data.result || response.data;
         setList(data);
       } catch (exception) {
