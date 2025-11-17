@@ -8,11 +8,13 @@ require("./db.config");
 const mainRoute = require("./routing.config");
 
 const app = express();
-app.use(cors({
-  origin: "https://goalggridd.netlify.app",
-  credentials: true
-}));
 
+app.use(
+  cors({
+    origin: ["https://goalggridd.netlify.app","http://localhost:5173"],
+    credentials: true,
+  })
+);
 
 app.use(helmet());
 app.use(express.json());
